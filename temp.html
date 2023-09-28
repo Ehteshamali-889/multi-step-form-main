@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Checkbox</title>
+    <style>
+        /* Hide the default checkbox */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Create a slider container */
+        .slider {
+            width: 50px;
+            height: 26px;
+            background-color: #ccc;
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Style the slider button */
+        .slider::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: 0.4s;
+        }
+
+        /* Move the slider button to the right when the checkbox is checked */
+        input[type="checkbox"]:checked + .slider::before {
+            transform: translateX(24px);
+        }
+    </style>
+</head>
+<body>
+    <label class="slider">
+        <input type="checkbox">
+    </label>
+</body>
+</html>
